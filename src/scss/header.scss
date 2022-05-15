@@ -1,5 +1,89 @@
 //====================================================================================================
+//====================================================================================================
 
+.header {
+	background-color: #fcfade;
+	@include adaptiveValue("padding-top", 44, 20);
+	@include adaptiveValue("padding-bottom", 44, 20);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	// .header__container
+	&__container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		//border: 1px solid green;
+	}
+	// .header__content
+	&__content {
+	}
+	// .header__logo
+	&__logo {
+		position: relative;
+		z-index: 5;
+		width: rem(151);
+		height: rem(43);
+		//@include adaptiveValue("margin-right", 165, 50);
+	}
+	// .header__menu
+	&__menu {
+		//border: 1px solid rgb(255, 0, 255);
+		max-width: rem(542);
+		@include adaptiveValue("margin-left", 65, 50);
+		@include adaptiveValue("margin-right", 60, 50);
+		justify-content: flex-end;
+		//flex: 0 1 auto;
+	}
+	// .header__button
+	&__button {
+		margin: 0 rem(15) 0 0;
+		align-items: center;
+	}
+}
+
+.menu {
+	max-width: rem(542);
+	flex: 1 1 auto;
+	// .menu__icon
+	&__icon {
+		//чтобы заработало бургер, скроем menu icon
+		display: none;
+	}
+	// .menu__body
+	&__body {
+	}
+	// .menu__list
+	&__list {
+		width: rem(542);
+		justify-content: flex-end;
+		> li {
+			position: relative;
+			@include adaptiveValue("margin-left", 26, 20);
+		}
+		@media (min-width: $mobile) {
+			display: flex;
+			align-items: center;
+			> li {
+				// эти отступы сверху/снизу расширяют область наведения мыши
+				padding: rem(10) 0;
+			}
+		}
+	}
+	// .menu__link
+	&__link {
+		//font-family: "Sofia Pro";
+		font-size: rem(16);
+		color: #818181;
+		line-height: math.div(23, 16);
+		&:hover {
+			text-decoration: underline;
+		}
+	} 
+}
+//=================================================
 //====================================================================================================
 
 //Burger
