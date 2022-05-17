@@ -1,3 +1,249 @@
 //====================================================================================================
-
+.page {
+	// .page__seo
+	&__seo {
+	}
+	// .page__marketplace
+	&__marketplace {
+	}
+}
+//========================================================================================================================================================
+//==== start SEO ====================================================================================================================================================
+.seo-page {
+	padding-top: rem(220);
+	padding-bottom: rem(40);
+	background: #F8F9FA; 
+	background: #d0e4f8; // убрать!!!!
+	// .seo-page__container
+	&__container {
+		max-width: rem(836);
+	}
+	// .seo-page__content
+	&__content {
+	}
+	// .seo-page__items
+	&__items {
+		display: flex;
+		column-gap: rem(16);
+		row-gap: rem(12);
+		letter-spacing: rem(-0.3);
+		text-transform: capitalize;
+		color: #353A3F;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	// .seo-page__item
+	&__item {
+		padding: rem(8) rem(12);
+		border-radius: 8px;
+		background: #FFFFFF;
+		& span {
+			color: #219653;
+			line-height: math.div(23, 16);
+		}
+	}
+}
+//==== finish SEO ====================================================================================================================================================
 //====================================================================================================
+//==== start marketplace ====================================================================================================================================================
+.marketplace-page {
+	padding-top: rem(40);
+	padding-bottom: rem(40);
+	// .marketplace-page__container
+	&__container {
+	}
+	// .marketplace-page__body
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		column-gap: rem(42);
+		@media (max-width:$tablet){
+			display: block;
+		}
+	}
+	// .marketplace-page__picture
+	&__picture {
+		flex: 0 1 48.16%;
+		height: 100%;
+		width: 100%;
+		@media (max-width:$tablet){
+			flex: 0 1 100%;
+			width: 100%;
+			max-width: rem(991);
+		}
+	}
+	// .marketplace-page__items
+	&__items {
+		flex: 0 1 48.33%;
+	}
+}
+//================================
+.picture-page {
+	position: relative;
+	// .picture-page__image
+	&__image {
+		position: relative;
+		//padding-bottom: 82%;
+		//max-width: rem(991);
+		overflow: hidden;
+		@media (max-width:$tablet){
+			margin-bottom: rem(30);
+		}
+		img {
+			//transition: all 0.3s ease 0s; // увеличиваем картинку плавно - НЕ РАБОТАЕТ!!!
+			// position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			@media (max-width:$tablet){
+				max-height: none;
+				//margin-bottom: rem(30);
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;			
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		}
+	}
+	// .picture-page__block-text
+	&__block-text {
+		z-index: 5;
+		color: #FFFFFF;
+		position: absolute;
+		bottom: 8.33%;
+		left: 5.19%;
+		@media (max-width:$tablet){
+			//@include adaptiveValue("bottom", 30, 40);
+		}
+	}
+	// .picture-page__list
+	&__list {
+	}
+	// .picture-page__items
+	&__items {
+		display: flex;
+		column-gap: rem(8);
+		height: rem(20);
+		align-items: center;
+		margin-bottom: rem(4);
+	}
+	// .picture-page__item
+	&__item {
+		//font-size: rem(13);
+		@include adaptiveValue("font-size", 13, 11, 1400, 320, 1);
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+		&:nth-child(even) {
+			font-size: rem(16);
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	// .picture-page__subtitle
+	&__subtitle {
+		//z-index: 3;
+		color: #FFFFFF;
+		font-size: rem(32);
+		line-height: math.div(40, 32);
+		align-self: stretch;
+		//max-width: rem(468);
+		@include adaptiveValue("max-width", 468, 400);
+		@include adaptiveValue("font-size", 32, 19, 992, 320, 1);
+		//@include adaptiveValue("font-size", 26, 22, 767, 320);
+	}
+}
+//=================================
+.items-page {
+	row-gap: rem(34);
+	//justify-content: space-between;
+	// .items-page__item"
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		color: #000;
+		&:not(:last-child) {
+			margin-bottom: rem(34);
+		}
+		column-gap: rem(20);
+		@media (max-width:$mobile){
+			display: block;
+		}			
+	}
+	// .items-page__image
+	&__image {
+		flex: 0 1 48.2%;
+		img {
+			height: 100%;
+			width: 100%;
+		}
+		@media (max-width:$mobile){
+			flex: 0 1 100%;
+		}	
+	}
+	// .items-page__block
+	&__block {
+		flex: 0 1 51.79%;
+		display: flex;
+		flex-direction: column;
+	}
+	// .items-page__title
+	&__title {
+		font-size: rem(22);
+		@include adaptiveValue("font-size", 22, 18, 1200, 992, 1);
+		line-height: math.div(28, 22);
+		&:not(:last-child) {
+			margin-bottom: rem(4);
+		}
+		@media (max-width:$tablet){
+			font-size: rem(22);
+		}
+	}
+	// .items-page__text
+	&__text {
+		letter-spacing: rem(-0.3);
+		&:not(:last-child) {
+			margin-bottom: rem(6);
+		}
+	}
+	// .items-page__list
+	&__list {
+		font-size: rem(14);
+		line-height: rem(14);
+		color: #279653;
+	}
+	// .items-page__items
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: rem(17);
+		margin-bottom: rem(6);
+	}
+	// .items-page__item
+	&__item {
+		&_1 {
+			color: #BE20A5;
+		} 
+	}
+	// .items-page__data
+	&__data {
+		font-size: rem(14);
+		letter-spacing: rem(-0.3);
+		color: #B9B9B9;
+	}
+}
+
+//==== finish marketplace ====================================================================================================================================================
+//====================================================================================================
+
+
+//==== finish  ====================================================================================================================================================
+//====================================================================================================
+//==== start  ====================================================================================================================================================

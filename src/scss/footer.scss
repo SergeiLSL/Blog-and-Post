@@ -13,8 +13,8 @@
 }
 
 .content-footer {
-	padding-top: rem(80);
-	padding-bottom: rem(48);
+	@include adaptiveValue("padding-top", 80, 40);
+	@include adaptiveValue("padding-bottom", 128, 40);
 	background: #333d37;
 	// .content-footer__container
 	&__container {
