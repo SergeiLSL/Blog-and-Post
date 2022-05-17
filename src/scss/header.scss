@@ -74,10 +74,11 @@
 	}
 	// .menu__link
 	&__link {
-		//font-family: "Sofia Pro";
+		cursor: pointer;
 		font-size: rem(16);
 		color: #818181;
 		line-height: math.div(23, 16);
+		
 		&:hover {
 			text-decoration: underline;
 		}
